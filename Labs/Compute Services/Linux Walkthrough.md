@@ -70,7 +70,10 @@ The connection process began by accessing the Details panel within the Vocareum 
 4. Exited the Details panel by selecting the X
 
 **[Screenshot: Details Panel with Lab Credentials]**
-> <img width="800" height="400" alt="Details Panel showing PublicIP and download options" src="https://github.com/user-attachments/assets/placeholder-details-panel" />
+> <img width="534" height="194" alt="Screenshot 2026-06-23 at 00 23 32" src="https://github.com/user-attachments/assets/853a98fa-2ccb-452e-a2bf-ccced238c7ef" />
+><img width="769" height="249" alt="Screenshot 2026-06-23 at 00 23 42" src="https://github.com/user-attachments/assets/4e545c70-a4fa-49d3-9bd1-443e85e10481" />
+
+
 
 ### macOS: SSH Client Configuration Path
 
@@ -87,7 +90,7 @@ From the Details panel, the **Download PEM** button was selected to download the
 - Usage: Authentication credential for SSH connection
 
 **[Screenshot: PEM File Download Interface]**
-> <img width="600" height="300" alt="PEM Private Key download panel" src="https://github.com/user-attachments/assets/placeholder-pem-download" />
+> <img width="535" height="200" alt="Screenshot 2026-06-23 at 00 35 42" src="https://github.com/user-attachments/assets/bde6abaf-6809-45d0-87ca-f638950fc781" />
 
 #### Step 2: Terminal Setup
 
@@ -100,7 +103,9 @@ cd ~/Downloads
 This command navigated to the Downloads folder where the `labsuser.pem` file had been saved by the browser.
 
 **[Screenshot: Terminal - Directory Navigation]**
-> <img width="700" height="200" alt="Terminal showing cd ~/Downloads command" src="https://github.com/user-attachments/assets/placeholder-terminal-cd" />
+> <img width="630" height="98" alt="Screenshot 2026-06-23 at 00 41 55" src="https://github.com/user-attachments/assets/911a28b0-5bcb-4a63-92cc-ad4f6bed792c" />
+
+
 
 #### Step 3: Modify Key File Permissions
 
@@ -122,7 +127,10 @@ chmod 400 labsuser.pem
 The private key file contains sensitive authentication credentials. Setting permissions to `400` (read-only for owner) ensures that only the file owner can read the key, preventing other users or processes from accessing it.
 
 **[Screenshot: Terminal - Key Permissions Modified]**
-> <img width="700" height="300" alt="Terminal showing chmod 400 command and updated permissions" src="https://github.com/user-attachments/assets/placeholder-chmod-permissions" />
+> <img width="381" height="39" alt="Screenshot 2026-06-23 at 00 48 47" src="https://github.com/user-attachments/assets/373a2205-d24e-4165-bc72-2502bc4b4665" />
+><img width="675" height="38" alt="Screenshot 2026-06-23 at 00 45 12" src="https://github.com/user-attachments/assets/6e77a60b-07b2-497d-ab2e-14419037ae7f" />
+
+
 
 #### Step 4: SSH Connection Command
 
@@ -140,18 +148,19 @@ ssh -i labsuser.pem ec2-user@<public-ip>
 
 **Example command with actual IP:**
 ```bash
-ssh -i labsuser.pem ec2-user@203.0.113.42
+ssh -i labsuser.pem ec2-user@35.94.171.109
 ```
 
 **[Screenshot: Terminal - SSH Connection Command Entered]**
-> <img width="700" height="300" alt="Terminal showing ssh command with public IP" src="https://github.com/user-attachments/assets/placeholder-ssh-command" />
+> <img width="594" height="26" alt="Screenshot 2026-06-23 at 00 52 19" src="https://github.com/user-attachments/assets/7f445c4c-20b1-40f1-abeb-bf04011d8fcb" />
+
 
 #### Step 5: Host Key Verification
 
 Upon executing the SSH command, the system prompted to confirm the server's host key authenticity:
 
 ```
-The authenticity of host '203.0.113.42 (203.0.113.42)' can't be established.
+The authenticity of host '35.94.171.109 (35.94.171.109)' can't be established.
 ECDSA key fingerprint is SHA256:AbCdEfGhIjKlMnOpQrStUvWxYz1234567890.
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
@@ -169,7 +178,8 @@ yes
 - **Known Hosts File:** After accepting, the host key is stored in `~/.ssh/known_hosts` for future connections
 
 **[Screenshot: Terminal - Host Key Verification Prompt]**
-> <img width="700" height="300" alt="Terminal showing SSH authenticity prompt and yes confirmation" src="https://github.com/user-attachments/assets/placeholder-host-key-prompt" />
+> <img width="797" height="80" alt="Screenshot 2026-06-23 at 00 54 55" src="https://github.com/user-attachments/assets/26904f7e-951f-426b-8f0c-4163b09b2ef9" />
+
 
 #### Step 6: Successful Connection
 
@@ -189,7 +199,8 @@ After confirming the host key, the SSH connection was established successfully. 
   - `$`: Standard user prompt (indicates non-root user)
 
 **[Screenshot: Terminal - SSH Connection Established]**
-> <img width="700" height="400" alt="Terminal showing successful SSH connection and ec2-user prompt" src="https://github.com/user-attachments/assets/placeholder-ssh-success" />
+> <img width="811" height="261" alt="Screenshot 2026-06-23 at 00 57 27" src="https://github.com/user-attachments/assets/1c49cc06-ba8e-40c4-bf30-9707a21bebb4" />
+
 
 ---
 
@@ -210,7 +221,8 @@ man man
 Upon execution, the terminal displayed the comprehensive documentation for the `man` command in an interactive pager interface. The pager (typically `less` on modern Linux systems) presented the documentation in a scrollable format.
 
 **[Screenshot: Terminal - man man Command Executed]**
-> <img width="800" height="500" alt="Terminal displaying the man page for the man command" src="https://github.com/user-attachments/assets/placeholder-man-man-display" />
+> <img width="813" height="481" alt="Screenshot 2026-06-23 at 00 59 28" src="https://github.com/user-attachments/assets/9f3064e2-70d1-4fdf-904f-50389fcb3aa0" />
+
 
 ### Navigating Man Pages
 
@@ -280,7 +292,8 @@ The man page was examined to identify standard documentation sections and header
 - Directed users to advanced topics
 
 **[Screenshot: Terminal - Man Page Headers Overview]**
-> <img width="800" height="500" alt="Man page displaying major headers including NAME, SYNOPSIS, and DESCRIPTION" src="https://github.com/user-attachments/assets/placeholder-man-headers-overview" />
+> <img width="1680" height="1050" alt="Screenshot 2026-06-23 at 01 00 43" src="https://github.com/user-attachments/assets/c8203b15-e798-4b58-8942-08ca32daaa32" />
+
 
 #### Examining the DESCRIPTION Section in Detail
 
@@ -314,7 +327,11 @@ Understanding these section numbers allowed for more precise man page lookups. F
 - `man 8 passwd` would show the system administration version
 
 **[Screenshot: Terminal - DESCRIPTION Header and Section Numbers]**
-> <img width="800" height="400" alt="Man page showing DESCRIPTION header with section number references" src="https://github.com/user-attachments/assets/placeholder-man-description-section" />
+> <img width="1633" height="204" alt="Screenshot 2026-06-23 at 01 11 49" src="https://github.com/user-attachments/assets/09642f87-1a59-4dbe-98f4-4824f5bbff6a" />
+><img width="800" height="28" alt="Screenshot 2026-06-23 at 01 12 03" src="https://github.com/user-attachments/assets/9d24d4e3-f77a-43c0-9ccc-287a8db2b04e" />
+><img width="1034" height="25" alt="Screenshot 2026-06-23 at 01 12 24" src="https://github.com/user-attachments/assets/734d7903-d480-4968-8118-fa18355eb894" />
+
+
 
 ### Man Page Search Functionality
 
@@ -353,7 +370,8 @@ The `q` key was pressed while viewing the man pages, which immediately closed th
 ```
 
 **[Screenshot: Terminal - Return to Command Prompt]**
-> <img width="600" height="300" alt="Terminal showing command prompt after exiting man pages" src="https://github.com/user-attachments/assets/placeholder-prompt-return" />
+> <img width="579" height="46" alt="Screenshot 2026-06-23 at 01 14 29" src="https://github.com/user-attachments/assets/fc7ce08d-816f-43c2-9496-1de43aa88b3e" />
+
 
 ---
 
