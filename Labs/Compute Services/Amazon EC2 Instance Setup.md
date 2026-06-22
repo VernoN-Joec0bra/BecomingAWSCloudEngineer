@@ -31,9 +31,10 @@ By the conclusion of this lab, the following objectives were successfully accomp
 1. **Launched** a web server instance with termination protection enabled
 2. **Monitored** the EC2 instance using CloudWatch metrics and status checks
 3. **Modified** security group rules to allow HTTP access
-4. **Resized** the instance by changing instance type and EBS volume size
-5. **Tested** termination protection functionality
-6. **Terminated** the EC2 instance gracefully
+4. **Enhanced** the web server interface with professional styling and branding
+5. **Resized** the instance by changing instance type and EBS volume size
+6. **Tested** termination protection functionality
+7. **Terminated** the EC2 instance gracefully
 
 ---
 
@@ -202,6 +203,100 @@ Hello From Your Web Server!
 > <img width="826" height="294" alt="Screenshot 2026-06-22 at 21 34 02" src="https://github.com/user-attachments/assets/24f5d804-1b27-4406-93d9-eb205523b8ae" />
 
 
+### Enhanced Web Server with Professional Styling
+
+To further enhance the web server's appearance and demonstrate advanced User Data script capabilities, the instance was updated with a more professional and visually appealing web page. The enhanced User Data script was redeployed to replace the basic HTML with a styled, branded interface.
+
+The following enhanced User Data script was configured:
+
+```bash
+#!/bin/bash
+
+# Update package metadata
+yum update -y
+
+# Install Apache
+yum install -y httpd
+
+# Enable and start Apache
+systemctl enable httpd
+systemctl start httpd
+
+# Create a more professional webpage
+cat > /var/www/html/index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Web Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #232F3E, #FF9900);
+            color: white;
+            text-align: center;
+            margin-top: 15%;
+        }
+
+        .container {
+            background: rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 10px;
+            width: 60%;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: white;
+            color: #232F3E;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 AWS EC2 Web Server</h1>
+        <p>Successfully deployed using EC2 User Data.</p>
+        <div class="badge">Free Tier Friendly</div>
+    </div>
+</body>
+</html>
+EOF
+```
+
+**Key Enhancements in the Script:**
+
+- **Package Updates:** The script was expanded to include `yum update -y` for system package freshness
+- **Professional Styling:** CSS was applied to create a visually appealing interface with:
+  - AWS brand colors (AWS Dark Blue #232F3E and AWS Orange #FF9900) in a gradient background
+  - Centered, responsive layout with a semi-transparent container
+  - Modern typography with scaled heading sizes
+  - Styled badge component for visual emphasis
+- **Branding:** The page title and heading were updated to reflect "AWS EC2 Web Server" with an emoji rocket icon
+- **User Feedback:** A "Free Tier Friendly" badge was added to highlight cost efficiency
+- **HTML5 Standards:** The page was structured with proper HTML5 semantic markup and meta tags for character encoding and viewport settings
+
+After updating the User Data script and relaunching the instance, the enhanced web page was displayed when accessing the public IPv4 address, showcasing a professional AWS-branded interface.
+
+**[Screenshot: Enhanced Web Server with Professional Styling]**
+> *Place screenshot of the professionally styled web page here*
+
+**[Screenshot: Enhanced User Data Script in Advanced Details Pane]**
+> *Place screenshot showing the updated User Data script entry here*
+
 ---
 
 ## Task 4: Instance Resizing
@@ -296,6 +391,14 @@ With termination protection disabled, the instance was successfully terminated:
 
 ## Key Learnings and Best Practices
 
+### User Data Scripts for Web Server Customization
+
+The lab demonstrated the power of User Data scripts in EC2 instance initialization:
+- **Automation:** Complete web server setup without manual configuration
+- **Scalability:** Same configuration deployed instantly across multiple instances
+- **Customization:** HTML, CSS, and branding fully customizable in User Data
+- **Efficiency:** Professional interfaces achievable with proper script structure
+
 ### Security Group Management
 
 The lab demonstrated that security groups served as critical components of AWS security architecture:
@@ -308,6 +411,7 @@ The lab demonstrated that security groups served as critical components of AWS s
 The complete instance lifecycle was explored:
 - **Launch:** Configuration through the wizard interface
 - **Monitor:** CloudWatch metrics and status checks
+- **Customize:** Enhanced User Data scripts for branding and styling
 - **Modify:** Instance type and storage resizing
 - **Terminate:** Graceful shutdown with protection mechanisms
 
@@ -329,11 +433,11 @@ Multiple monitoring capabilities were demonstrated:
 
 ## Conclusion
 
-The completion of this lab provided a comprehensive introduction to Amazon EC2 operations. The journey covered the entire instance lifecycle from creation through termination, with emphasis on practical AWS management skills including security configuration, performance optimization, and operational monitoring. These foundational skills were established as essential for any AWS practitioner working with compute services.
+The completion of this lab provided a comprehensive introduction to Amazon EC2 operations. The journey covered the entire instance lifecycle from creation through termination, with emphasis on practical AWS management skills including security configuration, web server customization through User Data scripts, performance optimization, and operational monitoring. These foundational skills were established as essential for any AWS practitioner working with compute services.
 
-**Lab Duration:** Approximately 45 minutes  
+**Lab Duration:** Approximately 60 minutes (includes enhanced web server styling)  
 **Status:** Successfully Completed  
-**Key Achievement:** Demonstrated proficiency in EC2 instance management across all core operational areas.
+**Key Achievement:** Demonstrated proficiency in EC2 instance management across all core operational areas, including advanced User Data script deployment for professional web server interfaces.
 
 ---
 
@@ -344,3 +448,4 @@ The completion of this lab provided a comprehensive introduction to Amazon EC2 o
 - **CloudWatch:** Comprehensive monitoring and logging service
 - **EBS Volumes:** Persistent block storage for instances
 - **Instance Types:** Various configurations optimized for different workloads
+- **User Data Scripts:** Automated instance configuration and initialization
