@@ -38,9 +38,9 @@ This work is part of the <strong>AWS re/Start Programme</strong>, where I am dev
 <hr>
 <h2>📈 Progress Tracker</h2>
 <ul>
-  <li>✅ Completed Labs: [Update as you go]</li>
-  <li>🔄 In Progress: [Current lab/project]</li>
-  <li>⏳ Upcoming: [Next topics or services]</li>
+  <li>✅ Completed Labs: [ ]</li>
+  <li>🔄 In Progress: [ ]</li>
+  <li>⏳ Upcoming: [ ]</li>
 </ul>
 <hr>
 <h2>🧠 Skills Being Developed</h2>
